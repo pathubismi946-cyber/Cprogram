@@ -1,0 +1,47 @@
+#include <stdio.h>
+int a, b, c, V;
+void largest();
+void smallest();
+void average();
+int main()
+{
+    printf("Enter marks of three subjects out of 100: ");
+    scanf("%d%d%d", &a, &b, &c);
+    largest();
+    smallest();
+    average();
+    return 0;
+}
+void largest()
+{
+    if (a > b )
+    {
+        if (a >= c)
+            printf("Largest mark is: %d\n", a);
+        else
+            printf("Largest mark is: %d\n", c);
+    }
+    else
+    {
+        if (b >= c)
+            printf("Largest mark is: %d\n", b);
+        else
+            printf("Largest mark is: %d\n", c);
+    }
+}
+void smallest()
+{
+    if (a <= b && a <= c)
+        printf("Smallest mark is: %d\n", a);
+    else if (b <= a && b <= c)
+        printf("Smallest mark is: %d\n", b);
+    else
+        printf("Smallest mark is: %d\n", c);
+}
+void average()
+{
+    float avg = (a + b + c) / 3;
+    printf("Average mark is: %f\n", avg);
+    V = (avg >= 50) ? 1 : 0;
+    printf("Value of V: %d\n", V);
+}
